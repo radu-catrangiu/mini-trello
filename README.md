@@ -23,6 +23,7 @@ The project depend on:
 In project root:
 
     npm install
+    npm run build
     cd backend
     npm install
 ```
