@@ -10,6 +10,14 @@ The database in the config is a free Mongo Instance from mlab.com.
 I could have used Docker to have my own database, but it didn't seem like it was the purpose of the assignment.
 ```
 
+## Dependencies
+
+The project depend on:
+* npm
+* node
+* vue-cli 
+
+
 ## Project setup
 ```
 In project root:
