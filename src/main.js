@@ -16,8 +16,11 @@ library.add(faUserSecret)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false;
+
+import config from './config';
+
 Vue.prototype.axios = axios.create({
-    baseURL: 'http://localhost:3333/',
+    baseURL: config.apiUrl,
     timeout: 2500
 });
 Vue.prototype.$ = $;

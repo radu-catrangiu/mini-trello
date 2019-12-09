@@ -1,37 +1,44 @@
 <template>
-  <div class="container-fluid">
-    <div class="row row-cols-md-5">
-      <div class="col my-3" v-for="list in lists" v-bind:key="list._id">
-        <ListElement
-          v-bind:name="list.name"
-          v-bind:id="list._id"
-          v-bind:boardId="boardId"
-          v-bind:ref="list._id"
-          @deleteList="deleteList"
-          @editList="editList"
-          @addCard="addCard"
-          @editCard="editCard"
-        />
+  <div>
+    <div class="container">
+      <div class="row">
+        <button type="button" class="btn btn-primary btn-lg btn-block" v-on:click="goBack">Back to Boards List</button>
       </div>
-      <div class="col my-3">
-        <div class="card text-center my-auto" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Create List!</h5>
+    </div>
+    <div class="container-fluid">
+      <div class="row row-cols-md-5">
+        <div class="col my-3" v-for="list in lists" v-bind:key="list._id">
+          <ListElement
+            v-bind:name="list.name"
+            v-bind:id="list._id"
+            v-bind:boardId="boardId"
+            v-bind:ref="list._id"
+            @deleteList="deleteList"
+            @editList="editList"
+            @addCard="addCard"
+            @editCard="editCard"
+          />
+        </div>
+        <div class="col my-3">
+          <div class="card text-center my-auto" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Create List!</h5>
 
-            <input
-              type="name"
-              class="form-control my-3"
-              id="listName"
-              placeholder="My Awesome List"
-              v-model="newListName"
-            />
-            <button href="#" class="btn btn-success" v-on:click="createList">Create</button>
+              <input
+                type="name"
+                class="form-control my-3"
+                id="listName"
+                placeholder="My Awesome List"
+                v-model="newListName"
+              />
+              <button href="#" class="btn btn-success" v-on:click="createList">Create</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <card-modal @refreshCards="refreshCards" ref="cardModal" v-bind:boardId="boardId" />
+      <card-modal @refreshCards="refreshCards" ref="cardModal" v-bind:boardId="boardId" />
+    </div>
   </div>
 </template>
 
@@ -56,6 +63,9 @@ export default {
     this.refreshLists();
   },
   methods: {
+    goBack() {
+      this.$router.push("/");
+    },
     refreshCards(listId) {
       this.$refs[listId][0].refreshCards();
     },
