@@ -2,23 +2,17 @@
 
 ## Project setup
 ```
-npm install
+In project root:
+
+    npm install
+    cd backend
+    npm install
 ```
 
-### Compiles and hot-reloads for development
+## Project start
+The command below is for UNIX-like systems. On Windows you must change directory to './backend' and run 'node index'
 ```
-npm run serve
-```
+In project root:
 
-### Compiles and minifies for production
+    npm run start
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
