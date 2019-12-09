@@ -7,6 +7,14 @@ import $ from 'jquery';
 import axios from 'axios';
 import Router from 'vue-router';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faUserSecret)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 Vue.config.productionTip = false;
 Vue.prototype.axios = axios.create({
     baseURL: 'http://localhost:3333/',

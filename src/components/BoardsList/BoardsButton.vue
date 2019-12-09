@@ -12,7 +12,7 @@
         </div>
         <div class="row mt-2">
           <div class="col-sm">
-            <button type="button" class="btn btn-success btn-block" v-on:click="editBoard">Edit</button>
+            <button type="button" class="btn btn-warning btn-block" v-on:click="editBoard">Edit</button>
           </div>
           <div class="col-sm">
             <button type="button" class="btn btn-danger btn-block" v-on:click="deleteBoard">Delete</button>

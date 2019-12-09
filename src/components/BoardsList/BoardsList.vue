@@ -4,7 +4,7 @@
       <div class="row">
         <button
           type="button"
-          class="btn btn-warning btn-lg btn-block"
+          class="btn btn-primary btn-lg btn-block"
           data-toggle="modal"
           data-target="#boardAction"
           v-on:click="modalMode='create'"
@@ -53,7 +53,7 @@ export default {
     },
     editBoard(value) {
         // eslint-disable-next-line
-          console.debug(this.$refs.boardActionModal);
+        console.debug(this.$refs.boardActionModal);
         this.modalMode="edit"
         this.$refs.boardActionModal._setInput(value);
         this.$("#boardAction").modal("show")

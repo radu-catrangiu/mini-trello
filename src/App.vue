@@ -1,9 +1,10 @@
 <template>
   <div>
     <div id="app">
-      <a href="#/" v-on:click="goHome"><img alt="Vue logo" class="mb-4" src="./assets/logo.png" /></a>
+      <a href="#/" v-on:click="goHome"><img alt="Vue logo" class="mb-1 mt-2" src="./assets/logo.svg" /></a>
     </div>
     <router-view />
+    <div class="fixed-bottom text-center mb-2 text-black-50">Catrangiu Radu © 2019</div>
   </div>
 </template>
 
@@ -26,6 +27,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
