@@ -18,7 +18,7 @@
       </div>
       <ul class="list-group list-group-flush">
         <li
-          class="list-group-item"
+          class="list-card-item list-group-item"
           style="cursor: pointer;"
           v-for="card in cards"
           v-bind:key="card._id"
@@ -32,10 +32,10 @@
           <p class="card-text">Add some content to your list!</p>
         </li>
       </ul>
-      <div class="card-body">
+      <div class="list-element-btn card-footer" v-on:click="addCard">
         <div class="row mt-2">
-          <div class="col-sm">
-            <button type="button" class="btn btn-primary" v-on:click="addCard">Add Content</button>
+          <div class="col-sm text-center">
+            <h5>Add Content</h5>
           </div>
         </div>
       </div>
@@ -125,4 +125,41 @@ export default {
 </script>
 
 <style>
+.list-card-item {
+  background: white;
+  -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+}
+
+.list-card-item:hover {
+  background: #f9f9f9;
+  -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+}
+
+.list-element-btn {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.75);
+  background: #ffc107;
+  border-color:#ffc107;
+  -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+}
+.list-element-btn:hover {
+  cursor: pointer;
+  color: white;
+  background: #E1A801;
+  border-color:#dea704;
+  -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+
+}
 </style>
