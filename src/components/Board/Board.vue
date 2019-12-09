@@ -22,7 +22,7 @@
         <div class="col my-3">
           <div class="card text-center my-auto" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">Create List!</h5>
+              <h5 class="card-title">Create a list!</h5>
 
               <input
                 type="name"
