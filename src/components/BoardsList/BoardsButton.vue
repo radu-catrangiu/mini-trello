@@ -7,7 +7,7 @@
         </div>
         <div class="row">
           <div class="col-sm">
-            <button type="button" class="btn btn-primary btn-block">Open Board</button>
+            <button type="button" class="btn btn-primary btn-block" v-on:click="openBoard">Open Board</button>
           </div>
         </div>
         <div class="row mt-2">
@@ -31,6 +31,9 @@ export default {
     id: String
   },
   methods: {
+    openBoard() {
+        this.$router.push({ path: 'board', query: { id: this.id }})
+    },
     deleteBoard() {
       this.axios
         .delete("/boards", {
@@ -49,7 +52,7 @@ export default {
         });
     },
     editBoard() {
-        this.$emit("edit", { name: this.name, id: this.id });
+      this.$emit("edit", { name: this.name, id: this.id });
     }
   }
 };

@@ -1,21 +1,20 @@
 <template>
   <div>
     <div id="app">
-      <img alt="Vue logo" class="mb-4" src="./assets/logo.png" />
-      <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+      <a href="#/" v-on:click="goHome"><img alt="Vue logo" class="mb-4" src="./assets/logo.png" /></a>
     </div>
-    <boards-list />
+    <router-view />
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import BoardsList from "./components/BoardsList/BoardsList.vue";
-
 export default {
   name: "app",
-  components: {
-    BoardsList
+  components: {},
+  methods: {
+    goHome() {
+      this.$router.push("/");
+    }
   }
 };
 </script>
