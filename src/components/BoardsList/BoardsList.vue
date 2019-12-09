@@ -4,7 +4,7 @@
       <div class="row">
         <button
           type="button"
-          class="btn btn-primary btn-lg btn-block"
+          class="btn btn-primary btn-lg btn-block mb-3"
           data-toggle="modal"
           data-target="#boardAction"
           v-on:click="modalMode='create'"
