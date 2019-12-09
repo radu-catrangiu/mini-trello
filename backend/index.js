@@ -18,7 +18,7 @@ app.use(cors());
 app.use((req, res, next) => {
     console.log(`${req.method} ${req.path} \n\t from ${req.connection.remoteAddress} \n\t at ${new Date()}`);
     return next();
-})
+});
 
 app.get('/', (req, res) => {
     const index_path = path.resolve('../dist/index.html');
@@ -228,18 +228,20 @@ app.delete('/cards', async (req, res) => {
 
 app.get('/*', (req, res) => {
     const file_path = path.resolve('../dist/' + req.path);
-    fs.exists(file_path, (exists) => {
+    fs.exists(file_path, exists => {
         if (exists) {
             return res.sendFile(file_path);
         }
 
         return res.sendStatus(404);
-    })
+    });
 });
 
 const websiteFilesExist = fs.existsSync(path.resolve('../dist/'));
 if (!websiteFilesExist) {
-    console.error("The dist folder doesn't exist! Run `npm run build` in the project root");
+    console.error(
+        "The dist folder doesn't exist! Run `npm run build` in the project root"
+    );
     process.exit(1);
 }
 
@@ -252,22 +254,34 @@ mongo.connect(config.db_url, (err, mongo_client) => {
     database.boards = database.collection('boards');
     database.lists = database.collection('lists');
     database.cards = database.collection('cards');
-    database.boards.createIndex('name', 'name', {
-        background: true,
-        unique: true
-    });
-    database.lists.createIndex('name', 'name', {
-        background: true,
-        unique: true
-    });
-    database.lists.createIndex('board_id', 'board_id', {
-        background: true,
-        unique: false
-    });
-    database.cards.createIndex('board_id', 'board_id', {
-        background: true,
-        unique: false
-    });
+    database.boards.createIndex(
+        { name: 1 },
+        {
+            background: true,
+            unique: true
+        }
+    );
+    database.lists.createIndex(
+        { name: 1 },
+        {
+            background: true,
+            unique: true
+        }
+    );
+    database.lists.createIndex(
+        { board_id: 1 },
+        {
+            background: true,
+            unique: false
+        }
+    );
+    database.cards.createIndex(
+        { board_id: 1 },
+        {
+            background: true,
+            unique: false
+        }
+    );
     app.listen(config.port, () =>
         console.log('Listening on port ' + config.port)
     );
